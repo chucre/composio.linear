@@ -1,0 +1,15 @@
+query MyIssues {
+  issues(filter: {assignee: {isMe: {eq: true}}}) {
+    nodes {
+      id
+      assignee {
+        id
+      }
+      identifier
+      parent {
+        id
+      }
+      title
+    }
+  }
+}

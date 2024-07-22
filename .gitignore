@@ -1,0 +1,8 @@
+.env*
+__pycache__/
+db/*
+
+*.pkl
+.aws-sam
+
+.DS_Store

@@ -1,0 +1,27 @@
+extends: base/linear/integrations.yaml
+docs: https://docs.composio.dev/docs/linear
+description: Tool to help teams plan, track, and manage their software projects.
+logo: https://asset.brandfetch.io/iduDa181eM/id0tTqetsg.svg
+categories: [project_management, ticketing]
+
+auth_schemes:
+- scheme_name: linear_api-key
+  auth_mode: API_KEY
+  proxy:
+    base_url: "{{base_url}}"
+    headers:
+      Authorization: "{{api_key}}"
+  fields:
+    - name: api_key
+      expected_from_customer: true 
+      displayName: API Key
+      description: "Your Linear API key"
+      type: string
+      required: true
+    - name: base_url
+      expected_from_customer: true
+      displayName: Base URL
+      description: "The base URL of your Linear instance"
+      type: string
+      required: false
+      default: "https://api.linear.app/graphql"
